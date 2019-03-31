@@ -1,3 +1,10 @@
+<h1>HOW TO CLONE</h1>
+$python manage.py migrate
+
+$python manage.py createsuperuser 로 superuser 생성
+
+/admin에서 로그인 후, CRUD 작동 확인해보기!
+
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
