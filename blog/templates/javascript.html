@@ -1,0 +1,30 @@
+{% load static %}
+
+<head>
+    <script type='text/javascript' src = '{%static "blog/js/day_night.js"%}'></script>
+</head>
+
+<body>
+
+<h1>We are leaning JS</h1>
+
+<ol class>
+    <li>멋사</li>
+    <li>아기사자들</li>
+    <li>화이팅!!</li>
+</ol>
+
+<input type="button" value="night" onclick='
+    document.querySelector("body").style.backgroundColor="black";
+    document.querySelector("body").style.color="white";
+'>
+<input type="button" value="day" onclick='
+    document.querySelector("body").style.backgroundColor="white";
+    document.querySelector("body").style.color="black";
+'>
+
+버튼 하나로 통일
+
+<input id="day_night" type="button" value ="night" onclick="dayNightHandler(this)">
+
+</body>

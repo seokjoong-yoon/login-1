@@ -3,14 +3,14 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.forms import UserCreationForm
+from accounts import views as user_views
 
 # Create your views here.
 
 def home(request):
     posts = Post.objects.all
-    return render(request, 'home.html',{'posts_list':posts})
     
-def new(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -23,8 +23,7 @@ def new(request):
             
     else:
         form = PostForm()
-            
-    return render(request, 'new.html', {'form':form})
+    return render(request, 'home.html',{'posts_list':posts, 'form' : form})
     
 def post_detail(request, index):
     post = get_object_or_404(Post, pk=index)
@@ -50,3 +49,6 @@ def post_delete(request, index):
     post = get_object_or_404(Post, pk=index)
     post.delete()
     return redirect('home')
+    
+def javascript(request):
+    return render(request, 'javascript.html')

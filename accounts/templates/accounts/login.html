@@ -1,0 +1,8 @@
+<h2>login</h2>
+<form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<b>Create new account?</b>
+<a href="{% url 'register' %}">회원가입</a><br>
